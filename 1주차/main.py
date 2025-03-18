@@ -11,7 +11,6 @@ except FileNotFoundError as e:
          error_f.write(str(e))
          error_f.write('\n')
 else: 
-     print("순차")
      for line in lines:
          print(line, end='')
          
