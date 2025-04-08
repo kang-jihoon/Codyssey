@@ -8,7 +8,7 @@ def read_log_file(file_path):
 def save_as_json(logs, output_path):
     try:
         with open(output_path,'w',encoding='utf-8') as file:
-            file.write('{\n'+'\n}'.join(f"'{i}':{{'timestamp':'{t}','message':'{m}'}}"for i, (t, m) in enumerate(logs)) + '\n}')
+            file.write('{\n'+',\n'.join(f'   "{i}": {{"timestamp": "{t}", "message": "{m}"}}' for i, (t, m) in enumerate(logs)) + '\n}')
     except IOError:
         print('파일 저장 오류')
 
